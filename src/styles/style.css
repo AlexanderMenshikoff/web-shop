@@ -410,7 +410,7 @@ body {
   .company-advantages__container {
     display: flex;
     justify-content: center;
-    margin-top: 29px;
+    margin-top: 8px;
     margin-left: auto;
   }
   .company-advantage__container {
@@ -475,6 +475,12 @@ body {
     display: flex;
     align-items: center;
     gap: 7px;
+    margin-top: 20px;
+  }
+
+  .bestseller-bottom-container {
+    margin-top: 20px;
+    gap: 16px;
   }
 
   .product-available-icon {
@@ -484,10 +490,18 @@ body {
   .bestseller-title {
     width: auto;
     margin-left: 20px;
+    margin-top: 26px;
+    font-size: 14px;
   }
 
   .bestseller-price-container {
-    margin-left: 20px;
+    margin-left: 22px;
+    margin-top: 18px;
+  }
+
+  .bestseller-old-price {
+    margin-top: 6px;
+    margin-left: 8px;
   }
 
   .bestseller-add-to-cart {
@@ -511,7 +525,7 @@ body {
   }
 
   .products-main-container {
-    margin-top: 33px;
+    margin-top: 20px;
   }
 
   .product-img {
@@ -587,8 +601,7 @@ body {
 
   .products-show-more {
     display: flex;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 10px auto 0 auto;
     width: 159px;
     height: 40px;
     border-radius: 5px;
@@ -601,6 +614,10 @@ body {
     align-items: center;
     justify-content: center;
     gap: 9px;
+  }
+
+  .arrow-icon-container {
+    margin-right: 15px;
   }
 }
 
