@@ -53,6 +53,10 @@ body {
   margin-bottom: 40px;
 }
 
+.topic-small {
+  display: none;
+}
+
 .products-main-container {
   width: 1218px;
   margin: 69px auto 0 auto;
@@ -101,6 +105,18 @@ body {
   margin-top: 17px;
   font-size: 20px;
   color: #828282;
+}
+
+.product-count-number {
+  display: none;
+}
+
+.product-arrow {
+  display: none;
+}
+
+.products-show-more {
+  display: none;
 }
 
 .bestsellers-container {
@@ -224,6 +240,14 @@ body {
   margin: 15px 15px 0 0;
 }
 
+.bestseller-youtube-icon {
+  display: none;
+}
+
+.product-one-click-buy {
+  display: none;
+}
+
 .bestseller-rating-container {
   display: flex;
   margin: 23px 0 0 20px;
@@ -281,6 +305,10 @@ body {
   font-size: 14px;
 }
 
+.product-available-icon {
+  display: none;
+}
+
 .bestseller-bottom-container {
   display: flex;
   margin: 24px 0 20px 20px;
@@ -320,4 +348,267 @@ body {
 .comparasion-icon:hover,
 .favorite-icon:hover {
   opacity: 0.7;
+}
+
+@media screen and (max-width: 1270px) {
+  .company-advantages__container {
+    display: block;
+    /* justify-content: center; */
+    margin-top: 50px;
+    gap: 30px;
+    width: 385px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .company-advantage__main-text {
+    color: #333;
+    font-size: 0.9em;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  .company-advantage__sub-text {
+    color: #333;
+    font-size: 1rem;
+    width: 266px;
+    height: 59px;
+    line-height: 20px;
+  }
+
+  .container {
+    max-width: 1199px;
+  }
+
+  .products-main-container {
+    width: 100vw;
+  }
+
+  .bestsellers-main-container {
+    width: 100vw;
+  }
+
+  .bestsellers-container {
+    flex-wrap: wrap;
+  }
+
+  .topic,
+  .bestsellers-topic-container .topic {
+    margin-left: 20px;
+  }
+
+  .arrow-icon-container {
+    margin-right: 20px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .container {
+    height: auto;
+  }
+
+  .company-advantages__container {
+    display: flex;
+    justify-content: center;
+    margin-top: 29px;
+    margin-left: auto;
+  }
+  .company-advantage__container {
+    display: none;
+  }
+
+  .company-advantage__container:first-child {
+    display: flex;
+    gap: 20px;
+  }
+
+  .company-advantage__main-text {
+    font-size: 16px;
+  }
+  .company-advantage__sub-text {
+    font-size: 14px;
+  }
+
+  .topic-small {
+    display: block;
+    color: #333;
+    font-size: 22px;
+    font-weight: 300;
+    margin-left: 15px;
+  }
+
+  .bestsellers-main-container {
+    margin-top: 30px;
+  }
+
+  .bestsellers-topic-container .topic {
+    color: #333;
+    font-size: 22px;
+    font-weight: 300;
+    margin-left: 15px;
+  }
+
+  .bestsellers-topic-container {
+    margin-bottom: 15px;
+  }
+
+  .bestseller-container {
+    display: none;
+    width: 350px;
+  }
+
+  .bestseller-container:first-child {
+    display: block;
+    margin-bottom: 45px;
+  }
+
+  .bestseller-container:hover {
+    .bestseller-search-icon {
+      display: none;
+    }
+    .image-expansion {
+      display: none;
+    }
+  }
+
+  .bestseller-is-available {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .product-available-icon {
+    display: block;
+  }
+
+  .bestseller-title {
+    width: auto;
+    margin-left: 20px;
+  }
+
+  .bestseller-price-container {
+    margin-left: 20px;
+  }
+
+  .bestseller-add-to-cart {
+    width: 230px;
+  }
+
+  .bestseller-youtube-icon {
+    display: block;
+    position: absolute;
+    right: 0;
+    margin: 21px 20px 0 0;
+  }
+
+  .bestseller-hit-icon.little {
+    left: 0;
+    margin: 20px 0 0 20px;
+  }
+
+  .products-main-container .topic {
+    display: none;
+  }
+
+  .products-main-container {
+    margin-top: 33px;
+  }
+
+  .product-img {
+    /* display: none; */
+    width: 34px;
+    height: 34px;
+    margin-top: 0;
+  }
+  .product-container {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: auto;
+    /* margin-bottom: 15px; */
+  }
+
+  .products-container {
+    display: block;
+  }
+  .product-title {
+    height: max-content;
+    margin-top: 0;
+    color: #2d9cdb;
+    font-size: 14px;
+  }
+  .product-count-number {
+    display: block;
+    color: #a0a0a0;
+    font-size: 14px;
+  }
+
+  .product-count {
+    display: none;
+  }
+
+  .product-arrow {
+    display: block;
+  }
+
+  .bestseller-container .demarcation-line {
+    background: #f2f2f2;
+  }
+
+  .demarcation-line {
+    background: #ebf8ff;
+    height: 1px;
+    margin: 0 15px 0 15px;
+  }
+
+  .product-one-click-buy {
+    color: #2d9cdb;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    display: block;
+    margin-top: 15px;
+  }
+
+  .left-product-small {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: 15px;
+  }
+
+  .right-product-small {
+    display: flex;
+    gap: 15px;
+    margin-right: 15px;
+  }
+
+  .products-show-more {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 159px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #2d9cdb;
+    color: #2d9cdb;
+    font-size: 14px;
+    font-family: SF UI Text;
+    font-weight: 500;
+    background-color: #fff;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  /* .company-advantages__container {
+    margin-left: 15px;
+  } */
+  .company-advantage__container {
+    margin-left: 15px;
+  }
 }
