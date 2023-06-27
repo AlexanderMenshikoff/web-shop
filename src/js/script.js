@@ -34,3 +34,22 @@ String.prototype.includes = function (match) {
 
 window.addEventListener("DOMContentLoaded", displayAdaptive);
 window.addEventListener("resize", displayAdaptive);
+
+//Функция для нахождения окончания, в данном случае для отзывов и товаров
+
+// const getWordRus = (num, wordArr) => {
+//   if (num.endsWith("1") && !num.endsWith("11")) {
+//     return `${num} ${wordArr[0]}`;
+//   }
+//   if (
+//     (num.endsWith("2") || num.endsWith("3") || num.endsWith("4")) &&
+//     !(num.endsWith("12") || num.endsWith("13") || num.endsWith("14"))
+//   ) {
+//     return `${num} ${wordArr[1]}`;
+//   } else {
+//     return `${num} ${wordArr[2]}`;
+//   }
+// };
+
+// console.log(getWordRus("1134", ["товар", "товара", "товаров"]));
+// console.log(getWordRus("0", ["отзыв", "отзыва", "отзывов"]));
