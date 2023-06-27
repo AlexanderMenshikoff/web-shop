@@ -365,14 +365,14 @@ body {
 
   .company-advantage__main-text {
     color: #333;
-    font-size: 0.9em;
+    font-size: 16px;
     font-weight: 500;
     margin-bottom: 10px;
   }
 
   .company-advantage__sub-text {
     color: #333;
-    font-size: 1rem;
+    font-size: 14px;
     width: 266px;
     height: 59px;
     line-height: 20px;
@@ -627,5 +627,83 @@ body {
 @media screen and (max-width: 376px) {
   .company-advantage__container {
     margin-left: 15px;
+  }
+}
+
+/* Верстка для IE 11+ */
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .company-advantage__img {
+    margin-right: 20px;
+  }
+
+  .company-advantage__container and {
+    margin-right: 37px;
+  }
+
+  .product-container {
+    margin: 0 26px 26px 0;
+  }
+
+  .arrow-icon-container {
+    width: 81px;
+  }
+
+  .left-arrow-block,
+  .right-arrow-block {
+    margin-left: 10px;
+  }
+
+  .bestseller-container {
+    margin-right: 30px;
+  }
+
+  .bestseller-actual-price,
+  .bestseller-stars-rating {
+    margin-right: 10px;
+  }
+
+  .image-expansion {
+    position: absolute;
+    top: 20%;
+    left: 43%;
+  }
+
+  .comparison-icon,
+  .favorite-icon {
+    margin-left: 15px;
+  }
+
+  .bestseller-icons-container {
+    margin: 0 20px 0 15px;
+  }
+
+  .company-advantage__img {
+    width: auto;
+  }
+
+  .product-container {
+    margin: auto;
+  }
+
+  .product-title {
+    height: auto;
+  }
+
+  .product-img {
+    margin-right: 15px;
+  }
+
+  .product-count-number {
+    margin-right: 15px;
+  }
+  .right-product-adaptive-container {
+    align-items: center;
+  }
+  .products-down-icon {
+    margin-left: 9px;
+  }
+  .product-available-icon {
+    margin-right: 7px;
   }
 }
