@@ -1,20 +1,28 @@
 const bestsellerHitIcon = document.querySelector(".bestseller-hit-icon");
-const comparasionIcon = document.querySelector(".comparasion-icon");
+const comparisonIcon = document.querySelector(".comparison-icon");
+const topic = document.querySelector(".topic");
 
 const displayAdaptive = () => {
   if (window.innerWidth <= 550) {
     bestsellerHitIcon.classList.add("little");
     bestsellerHitIcon.innerText = "ХИТ";
-    comparasionIcon.src = "./img/icons/Group.svg";
+    comparisonIcon.src = "./img/icons/Group.svg";
+    topic.classList.add("adaptive");
+    topic.innerText = "Популярные категории";
   } else {
-    comparasionIcon.src.includes("Group")
-      ? (comparasionIcon.src = "./img/icons/comparison_icon.svg")
+    comparisonIcon.src.includes("Group")
+      ? (comparisonIcon.src = "./img/icons/comparison_icon.svg")
       : "";
 
     bestsellerHitIcon.innerText === "ХИТ"
       ? (bestsellerHitIcon.innerText = "hit")
       : "";
     bestsellerHitIcon.classList.remove("little");
+
+    topic.innerText === "Популярные категории"
+      ? (topic.innerText = "Католог товаров")
+      : "";
+    topic.classList.remove("adaptive");
   }
 };
 
