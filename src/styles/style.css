@@ -613,6 +613,7 @@ body {
     justify-content: center;
     gap: 9px;
     opacity: 1;
+    cursor: pointer;
   }
 
   .products-show-more:hover {
