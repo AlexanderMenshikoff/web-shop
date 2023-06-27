@@ -2,7 +2,7 @@ const bestsellerHitIcon = document.querySelector(".bestseller-hit-icon");
 const comparisonIcon = document.querySelector(".comparison-icon");
 const topic = document.querySelector(".topic");
 
-const displayAdaptive = () => {
+function displayAdaptive() {
   if (window.innerWidth <= 550) {
     bestsellerHitIcon.classList.add("little");
     bestsellerHitIcon.innerText = "ХИТ";
@@ -24,6 +24,12 @@ const displayAdaptive = () => {
       : "";
     topic.classList.remove("adaptive");
   }
+}
+
+//Прототип для метода includes, так как в IE 11+ не поддерживается
+
+String.prototype.includes = function (match) {
+  return this.indexOf(match) !== -1;
 };
 
 window.addEventListener("DOMContentLoaded", displayAdaptive);
