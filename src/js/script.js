@@ -6,6 +6,7 @@ import {
 
 let bestsellerHitIcon = "";
 let comparisonIcon = "";
+
 const topic = document.querySelector(".topic");
 const companyAdvantagesContainer = document.querySelector(
   ".company-advantages__container"
@@ -37,14 +38,27 @@ function displayAdaptive() {
   }
 }
 
+//Функция для нахождения окончания, в данном случае для отзывов и товаров
+
+const getWordRus = (num, wordArr) => {
+  if (num.endsWith("1") && !num.endsWith("11")) {
+    return `${num} ${wordArr[0]}`;
+  }
+  if (
+    (num.endsWith("2") || num.endsWith("3") || num.endsWith("4")) &&
+    !(num.endsWith("12") || num.endsWith("13") || num.endsWith("14"))
+  ) {
+    return `${num} ${wordArr[1]}`;
+  } else {
+    return `${num} ${wordArr[2]}`;
+  }
+};
+
 //Прототип для метода includes, так как в IE 11+ не поддерживается
 
 String.prototype.includes = function (match) {
   return this.indexOf(match) !== -1;
 };
-
-window.addEventListener("DOMContentLoaded", displayAdaptive);
-window.addEventListener("resize", displayAdaptive);
 
 function displayAdvantage() {
   advantagesDataArray.map((el) => {
@@ -66,8 +80,6 @@ function displayAdvantage() {
   });
 }
 
-displayAdvantage();
-
 function displayProducts() {
   productsDataArray.map((el) => {
     productsContainer.insertAdjacentHTML(
@@ -82,7 +94,10 @@ function displayProducts() {
               />
               <div class="product-title">${el.productTitle}</div>
             </div>
-            <div class="product-count">${el.productCount}</div>
+            <div class="product-count">${getWordRus(
+              el.productCountNumber.toString(),
+              ["товар", "товара", "товаров"]
+            )}</div>
             <div class="right-product-adaptive-container">
               <div class="product-count-number">${el.productCountNumber}</div>
               <img class="product-arrow" src=${el.productArrowImg} alt="" />
@@ -97,8 +112,6 @@ function displayProducts() {
     );
   });
 }
-
-displayProducts();
 
 function displayBestsellers() {
   bestsellersDataArray.map((el) => {
@@ -134,11 +147,16 @@ function displayBestsellers() {
         src=${el.bestsellerStarsRatingImg}
         alt=""
       />
-      <div class="bestseller-reviews">${el.bestsellerReviews}</div>
+      <div class="bestseller-reviews">${getWordRus(
+        el.bestsellerReviews.toString(),
+        ["отзыв", "отзыва", "отзывов"]
+      )}</div>
     </div>
     <div class="bestseller-price-container">
-      <div class="bestseller-actual-price">${el.bestsellerActualPrice}</div>
-      <div class="bestseller-old-price">${el.bestsellerOldPrice}</div>
+      <div class="bestseller-actual-price">${el.bestsellerActualPrice} ₽</div>
+      <div class="bestseller-old-price">${el.bestsellerOldPrice} ${
+      el.bestsellerOldPrice ? "₽" : ""
+    }</div>
     </div>
     <div class="bestseller-is-available">
       <img
@@ -149,7 +167,9 @@ function displayBestsellers() {
       ${el.bestsellerIsAvailableText}
     </div>
     <div class="bestseller-bottom-container">
-      <button class="bestseller-add-to-cart">${el.bestsellerAddToCartBtn}</button>
+      <button class="bestseller-add-to-cart">${
+        el.bestsellerAddToCartBtn
+      }</button>
       <div class="bestseller-icons-container">
         <img
           class="comparison-icon"
@@ -171,23 +191,9 @@ function displayBestsellers() {
     comparisonIcon = document.querySelector(".comparison-icon");
   });
 }
+
+window.addEventListener("DOMContentLoaded", displayAdaptive);
+window.addEventListener("resize", displayAdaptive);
+displayAdvantage();
+displayProducts();
 displayBestsellers();
-
-//Функция для нахождения окончания, в данном случае для отзывов и товаров
-
-// const getWordRus = (num, wordArr) => {
-//   if (num.endsWith("1") && !num.endsWith("11")) {
-//     return `${num} ${wordArr[0]}`;
-//   }
-//   if (
-//     (num.endsWith("2") || num.endsWith("3") || num.endsWith("4")) &&
-//     !(num.endsWith("12") || num.endsWith("13") || num.endsWith("14"))
-//   ) {
-//     return `${num} ${wordArr[1]}`;
-//   } else {
-//     return `${num} ${wordArr[2]}`;
-//   }
-// };
-
-// console.log(getWordRus("1134", ["товар", "товара", "товаров"]));
-// console.log(getWordRus("0", ["отзыв", "отзыва", "отзывов"]));
