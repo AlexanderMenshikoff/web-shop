@@ -16,20 +16,40 @@ const bestsellersContainer = document.querySelector(".bestsellers-container");
 
 function displayAdaptive() {
   if (window.innerWidth <= 550) {
-    bestsellerHitIcon.classList.add("adaptive");
-    bestsellerHitIcon.innerText = "ХИТ";
-    comparisonIcon.src = "./img/icons/Group.svg";
+    bestsellerHitIcon.forEach((el) => {
+      el.classList.add("adaptive");
+      el.innerText = "ХИТ";
+    });
+
+    comparisonIcon.forEach((el) => {
+      el.src = "./img/icons/Group.svg";
+    });
     topic.classList.add("adaptive");
     topic.innerText = "Популярные категории";
   } else {
-    comparisonIcon.src.includes("Group")
-      ? (comparisonIcon.src = "./img/icons/comparison_icon.svg")
-      : "";
+    comparisonIcon.forEach((el) => {
+      el.src.includes("Group");
+    })
+      ? comparisonIcon.forEach((el) => {
+          el.src = "./img/icons/comparison_icon.svg";
+        })
+      : comparisonIcon.forEach((el) => {
+          el.src = "./img/icons/comparison_icon.svg";
+        });
 
-    bestsellerHitIcon.innerText === "ХИТ"
-      ? (bestsellerHitIcon.innerText = "hit")
-      : "";
-    bestsellerHitIcon.classList.remove("adaptive");
+    bestsellerHitIcon.forEach((el) => {
+      el.innerText === "ХИТ";
+    })
+      ? bestsellerHitIcon.forEach((el) => {
+          el.innerText = "hit";
+        })
+      : bestsellerHitIcon.forEach((el) => {
+          el.innerText = "hit";
+        });
+
+    bestsellerHitIcon.forEach((el) => {
+      el.classList.remove("adaptive");
+    });
 
     topic.innerText === "Популярные категории"
       ? (topic.innerText = "Каталог товаров")
@@ -116,7 +136,8 @@ function displayProducts() {
 function displayBestsellers() {
   bestsellersDataArray.map((el) => {
     bestsellersContainer.innerHTML += `
-    <div class="bestseller-container">
+    
+    <div class="bestseller-container swiper-slide ">
     <img
       class="bestseller-search-icon"
       src=${el.bestsellerSearchIcon}
@@ -186,9 +207,11 @@ function displayBestsellers() {
     <div class="demarcation-line"></div>
     <div class="product-one-click-buy">${el.bestsellerOneClickBuy}</div>
   </div>
+
+    
     `;
-    bestsellerHitIcon = document.querySelector(".bestseller-hit-icon");
-    comparisonIcon = document.querySelector(".comparison-icon");
+    bestsellerHitIcon = document.querySelectorAll(".bestseller-hit-icon");
+    comparisonIcon = document.querySelectorAll(".comparison-icon");
   });
 }
 
@@ -197,3 +220,28 @@ window.addEventListener("resize", displayAdaptive);
 displayAdvantage();
 displayProducts();
 displayBestsellers();
+
+new Swiper(".mySwiper", {
+  navigation: {
+    nextEl: ".right-arrow-block",
+    prevEl: ".left-arrow-block",
+  },
+  slidesPerView: 4,
+  loop: true,
+  autoplay: {
+    delay: 5000,
+    stopOnLastSlide: true,
+    disableOnInteraction: true,
+  },
+  breakpoints: {
+    350: {
+      slidesPerView: 1,
+    },
+    500: {
+      slidesPerView: 2,
+    },
+    700: {
+      slidesPerView: 4,
+    },
+  },
+});
