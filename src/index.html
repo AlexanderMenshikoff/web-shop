@@ -6,6 +6,10 @@
     <title>Document</title>
     <link rel="stylesheet" href="./styles/style.css" />
     <link href="https://fonts.cdnfonts.com/css/sf-ui-text-2" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
   </head>
   <body>
     <div class="container">
@@ -43,10 +47,13 @@
             </div>
           </div>
         </div>
-        <div class="bestsellers-container"></div>
+        <div class="swiper mySwiper">
+          <div class="bestsellers-container swiper-wrapper"></div>
+        </div>
       </div>
     </div>
     <script src="./js/script.js" type="module"></script>
     <script src="./js/data.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   </body>
 </html>
